@@ -1,0 +1,140 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px 5px 0 0;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+.tab i {
+  margin-right: 8px;
+}
+
+.tab.active {
+  background: #333;
+  color: white;
+}
+
+.tab:hover {
+  background: #bbb;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  border-top: 2px solid #333;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}

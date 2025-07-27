@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photography | Tabs</title>
+  <link rel="stylesheet" href="tabs.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
+</head>
+<body>
+
+  <div class="container">
+    <h1>📸 My Photography Portfolio</h1>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('about')">
+        <i class="fas fa-user"></i> About
+      </button>
+      <button class="tab" onclick="switchTab('gallery')">
+        <i class="fas fa-image"></i> Gallery
+      </button>
+      <button class="tab" onclick="switchTab('contact')">
+        <i class="fas fa-envelope"></i> Contact
+      </button>
+    </div>
+
+    <div class="tab-content fade-in" id="about">
+      <h2>About Me</h2>
+      <p>Hi! I'm [Your Name], a photographer with a passion for storytelling through visuals.</p>
+    </div>
+
+    <div class="tab-content fade-in" id="gallery" style="display: none;">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/photo1.jpg" alt="1" onclick="openLightbox(this.src)">
+        <img src="images/photo2.jpg" alt="2" onclick="openLightbox(this.src)">
+        <img src="images/photo3.jpg" alt="3" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+
+    <div class="tab-content fade-in" id="contact" style="display: none;">
+      <h2>Contact</h2>
+      <form onsubmit="alert('Message sent!'); return false;">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" />
+  </div>
+
+  <script src="tabs.js"></script>
+</body>
+</html>
