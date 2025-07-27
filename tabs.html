@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Photography Portfolio</title>
-  <link rel="stylesheet" href="tabs.css" />
-  <script defer src="tabs.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="tabs.css">
 </head>
 <body>
+
   <div class="container">
-    <h1><i class="fa-solid fa-camera"></i> My Photography Portfolio</h1>
+    <h1>📸 My Photography Portfolio</h1>
 
-    <div class="tab-buttons">
-      <button onclick="openTab('about')" class="tab-btn active">About</button>
-      <button onclick="openTab('gallery')" class="tab-btn">Gallery</button>
-      <button onclick="openTab('contact')" class="tab-btn">Contact</button>
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab('about')">About</button>
+      <button class="tab-button" onclick="openTab('gallery')">Gallery</button>
+      <button class="tab-button" onclick="openTab('contact')">Contact</button>
     </div>
 
-    <hr />
+    <hr>
 
-    <div id="about" class="tab-content">
+    <div id="about" class="tab-content fade-in">
       <h2>About Me</h2>
-      <p>Hi! I'm [Your Name], a photographer with a passion for storytelling through imagery.</p>
+      <p>Hi! I'm [Your Name], a photographer with a passion for storytelling through visuals.</p>
     </div>
 
-    <div id="gallery" class="tab-content hidden">
+    <div id="gallery" class="tab-content fade-in" style="display: none;">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <img src="https://solitarian2199.github.io/Photography/photo1.jpg" alt="1" onclick="openLightbox(this.src)" />
-        <img src="https://solitarian2199.github.io/Photography/photo2.jpg" alt="2" onclick="openLightbox(this.src)" />
-        <img src="https://solitarian2199.github.io/Photography/photo3.jpg" alt="3" onclick="openLightbox(this.src)" />
-        <img src="https://solitarian2199.github.io/Photography/photo4.jpg" alt="4" onclick="openLightbox(this.src)" />
+        <img src="https://solitarian2199.github.io/Photography/photo1.jpg" alt="1" onclick="openLightbox(this.src)">
+        <img src="https://solitarian2199.github.io/Photography/photo2.jpg" alt="2" onclick="openLightbox(this.src)">
+        <img src="https://solitarian2199.github.io/Photography/photo3.jpg" alt="3" onclick="openLightbox(this.src)">
+        <img src="https://solitarian2199.github.io/Photography/photo4.jpg" alt="4" onclick="openLightbox(this.src)">
       </div>
     </div>
 
-    <div id="contact" class="tab-content hidden">
+    <div id="contact" class="tab-content fade-in" style="display: none;">
       <h2>Contact</h2>
-      <p>Email: youremail@example.com</p>
-      <p>Instagram: @yourhandle</p>
+      <p>Email me at: yourname@example.com</p>
     </div>
   </div>
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox Overlay -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="Zoomed Photo">
+    <img id="lightbox-img" src="" alt="Large View">
   </div>
+
+  <script src="tabs.js"></script>
 </body>
 </html>
