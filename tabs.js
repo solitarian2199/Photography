@@ -1,43 +1,23 @@
-function switchTab(tabId) {
-  // Hide all content
-  const allTabs = document.querySelectorAll('.tab-content');
-  allTabs.forEach(tab => {
-    tab.style.display = 'none';
-    tab.classList.remove('fade-in');
-  });
+function openTab(tabId) {
+  // Hide all tab content
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
 
-  // Remove active class
-  document.querySelectorAll('.tab').forEach(button => {
-    button.classList.remove('active');
-  });
+  // Remove active class from buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
 
-  // Show selected tab
-  const targetTab = document.getElementById(tabId);
-  targetTab.style.display = 'block';
-  targetTab.classList.add('fade-in');
-
-  // Activate button
-  const clickedTab = Array.from(document.querySelectorAll('.tab')).find(tab =>
-    tab.textContent.toLowerCase().includes(tabId)
-  );
-  if (clickedTab) clickedTab.classList.add('active');
+  // Show selected tab and activate button
+  document.getElementById(tabId).classList.remove('hidden');
+  event.target.classList.add('active');
 }
 
-// Lightbox
 function openLightbox(src) {
-  const lightbox = document.getElementById("lightbox");
-  const img = document.getElementById("lightbox-img");
-  img.src = src;
-  lightbox.style.display = "flex";
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = src;
+  lightbox.style.display = 'flex';
 }
 
 function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none';
 }
-
-// Click outside image to close lightbox
-document.getElementById("lightbox").addEventListener("click", function (e) {
-  if (e.target.id === "lightbox") {
-    closeLightbox();
-  }
-});
