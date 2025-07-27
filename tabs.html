@@ -2,59 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photography | Tabs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Photography Portfolio</title>
   <link rel="stylesheet" href="tabs.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
+  <script defer src="tabs.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
   <div class="container">
-    <h1>📸 My Photography Portfolio</h1>
+    <h1><i class="fa-solid fa-camera"></i> My Photography Portfolio</h1>
 
-    <div class="tabs">
-      <button class="tab active" onclick="switchTab('about')">
-        <i class="fas fa-user"></i> About
-      </button>
-      <button class="tab" onclick="switchTab('gallery')">
-        <i class="fas fa-image"></i> Gallery
-      </button>
-      <button class="tab" onclick="switchTab('contact')">
-        <i class="fas fa-envelope"></i> Contact
-      </button>
+    <div class="tab-buttons">
+      <button onclick="openTab('about')" class="tab-btn active">About</button>
+      <button onclick="openTab('gallery')" class="tab-btn">Gallery</button>
+      <button onclick="openTab('contact')" class="tab-btn">Contact</button>
     </div>
 
-    <div class="tab-content fade-in" id="about">
+    <hr />
+
+    <div id="about" class="tab-content">
       <h2>About Me</h2>
-      <p>Hi! I'm [Your Name], a photographer with a passion for storytelling through visuals.</p>
+      <p>Hi! I'm [Your Name], a photographer with a passion for storytelling through imagery.</p>
     </div>
 
-    <div class="tab-content fade-in" id="gallery" style="display: none;">
+    <div id="gallery" class="tab-content hidden">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <img src="photo1.jpg" alt="1" onclick="openLightbox(this.src)">
-        <img src="photo2.jpg" alt="2" onclick="openLightbox(this.src)">
-        <img src="photo3.jpg" alt="3" onclick="openLightbox(this.src)">
+        <img src="https://solitarian2199.github.io/Photography/photo1.jpg" alt="1" onclick="openLightbox(this.src)" />
+        <img src="https://solitarian2199.github.io/Photography/photo2.jpg" alt="2" onclick="openLightbox(this.src)" />
+        <img src="https://solitarian2199.github.io/Photography/photo3.jpg" alt="3" onclick="openLightbox(this.src)" />
+        <img src="https://solitarian2199.github.io/Photography/photo4.jpg" alt="4" onclick="openLightbox(this.src)" />
       </div>
     </div>
 
-    <div class="tab-content fade-in" id="contact" style="display: none;">
+    <div id="contact" class="tab-content hidden">
       <h2>Contact</h2>
-      <form onsubmit="alert('Message sent!'); return false;">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+      <p>Email: youremail@example.com</p>
+      <p>Instagram: @yourhandle</p>
     </div>
   </div>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" />
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Zoomed Photo">
   </div>
-
-  <script src="tabs.js"></script>
 </body>
 </html>
